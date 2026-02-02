@@ -11,6 +11,14 @@
 
 It leverages powerful AI vision and image editing capabilities (OpenAI Image Models and Google Gemini) to analyze a screenshot, understand the context, and generate a stylized, professional-looking thumbnail with compelling text overlays and branding, strictly adhering to the game's art style.
 
+## Examples
+
+| Source | Result | Model |
+| :---: | :---: | :---: |
+| <img src="assets/example1-source.jpg" width="300"> | <img src="assets/example1-gemini-result.jpg" width="300"> | **Gemini**<br>`gemini-3-pro-image-preview` |
+| <img src="assets/example2-source.jpg" width="300"> | <img src="assets/example2-openai-result.jpg" width="300"> | **OpenAI**<br>`gpt-image-1` |
+| <img src="assets/example3-source.jpg" width="300"> | <img src="assets/example3-openai-result.jpeg" width="300"> | **OpenAI**<br>`gpt-image-1` |
+
 ## Features
 
 - **Multi-Driver Support**: Switch seamlessly between OpenAI and Google Gemini.
