@@ -4,6 +4,7 @@ namespace Artryazanov\YtCoverGen\Generators;
 
 use Artryazanov\YtCoverGen\Contracts\CoverGeneratorInterface;
 use Artryazanov\YtCoverGen\Enums\GeminiModelEnum;
+use Artryazanov\YtCoverGen\Exceptions\GeminiResponseException;
 use Artryazanov\YtCoverGen\Support\ImageProcessor;
 use RuntimeException;
 
@@ -120,7 +121,7 @@ class GeminiCoverGenerator implements CoverGeneratorInterface
         $response = $this->httpClient->sendRequest($request);
 
         if ($response->getStatusCode() !== 200) {
-            throw new RuntimeException("Gemini API Error: " . $response->getBody()->getContents());
+            throw new GeminiResponseException("Gemini API Error: " . $response->getBody()->getContents());
         }
         
         $json = json_decode($response->getBody()->getContents(), true);
@@ -133,7 +134,7 @@ class GeminiCoverGenerator implements CoverGeneratorInterface
             }
         }
         
-        throw new RuntimeException("No image found in Gemini Beta response. Response: " . json_encode($json));
+        throw new GeminiResponseException("No image found in Gemini Beta response. Response: " . json_encode($json));
     }
 
 

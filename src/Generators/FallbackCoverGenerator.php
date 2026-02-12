@@ -3,6 +3,7 @@
 namespace Artryazanov\YtCoverGen\Generators;
 
 use Artryazanov\YtCoverGen\Contracts\CoverGeneratorInterface;
+use Artryazanov\YtCoverGen\Exceptions\GeminiResponseException;
 use Throwable;
 
 class FallbackCoverGenerator implements CoverGeneratorInterface
@@ -26,6 +27,15 @@ class FallbackCoverGenerator implements CoverGeneratorInterface
     {
         try {
             return $this->primary->generate($imagePath, $gameName, $videoDescription);
+        } catch (GeminiResponseException $e) {
+            // Force fallback for Gemini response errors, ignoring error handler re-throws if necessary
+            if ($this->errorHandler) {
+                try {
+                    call_user_func($this->errorHandler, $e);
+                } catch (Throwable $handlerException) {
+                    // Suppress handler exception to ensure fallback
+                }
+            }
         } catch (Throwable $e) {
             if ($this->errorHandler) {
                 call_user_func($this->errorHandler, $e);
