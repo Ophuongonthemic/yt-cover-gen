@@ -19,7 +19,7 @@
         "psr/log": "^1.0 || ^2.0 || ^3.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0",
+        "orchestra/testbench": "^9.0 || ^10.0",
         "pestphp/pest": "^2.0 || ^3.0",
         "larastan/larastan": "^3.9",
         "laravel/pint": "^1.27"
